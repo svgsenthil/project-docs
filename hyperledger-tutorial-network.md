@@ -45,7 +45,7 @@ $ docker-compose start
 
 ### Start Rest Server
 ```
-cd ~/tutorial-network/dist/
+cd ~/tutorial-network/
 composer network ping --card admin@tutorial-network
 composer-rest-server -c admin@tutorial-network -n never -w true
 ```
