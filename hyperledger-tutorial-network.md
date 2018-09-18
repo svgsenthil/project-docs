@@ -56,3 +56,24 @@ cd ~/tutorial-network/tutorial-network/
 npm start
 ```
 
+### Re-Generate and Deploy your Business Network
+
+After changing the files in a business network, open the package.json file in the tutorial-network directory and
+update the version from 0.0.1 to 0.0.2.
+
+```
+cd ~/tutorial-network/
+composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.2.bna
+```
+
+Switch to the terminal, change directory to the folder containing the tutorial-network@0.0.2.bna.
+
+```
+cd ~/tutorial-network/
+composer network install --card PeerAdmin@hlfv1 --archiveFile tutorial-network@0.0.2.bna
+composer network upgrade -c PeerAdmin@hlfv1 -n tutorial-network -V 0.0.2
+composer network ping -c admin@tutorial-network | grep Business
+composer-rest-server
+```
+Refer [Hyperledger Tutorial Pages](https://hyperledger.github.io/composer/latest/tutorials/queries).
+

@@ -52,3 +52,24 @@ cd ~/truck-network/dist/hyperchainlabs-truck-network/
 npm start
 ```
 
+### Re-Generate and Deploy your Business Network
+
+After changing the files in a business network, open the package.json file in the truck-network directory and
+update the version from 0.1.2 to 0.1.3.
+
+```
+cd ~/truck-network/
+composer archive create --sourceType dir --sourceName . -a hyperchainlabs-truck-network@0.1.3.bna
+```
+
+Switch to the terminal, change directory to the folder containing the hyperchainlabs-truck-network@0.1.3.bna.
+
+```
+cd ~/truck-network/dist/
+composer network install --card PeerAdmin@hlfv1 --archiveFile hyperchainlabs-truck-network@0.1.3.bna
+composer network upgrade -c PeerAdmin@hlfv1 -n hyperchainlabs-truck-network -V 0.1.3
+composer network ping -c admin@hyperchainlabs-truck-network | grep Business
+composer-rest-server
+```
+Refer [Hyperledger Tutorial Pages](https://hyperledger.github.io/composer/latest/tutorials/queries).
+
