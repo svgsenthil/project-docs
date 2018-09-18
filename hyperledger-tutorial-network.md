@@ -56,7 +56,7 @@ cd ~/tutorial-network/tutorial-network/
 npm start
 ```
 
-### Re-Generate and Deploy your Business Network
+## Re-Generate and Deploy your Business Network
 
 After changing the files in a business network, open the package.json file in the tutorial-network directory and
 update the version from 0.0.1 to 0.0.2.
